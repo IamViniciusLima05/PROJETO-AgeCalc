@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgeCalc | Calculadora de idade</title>
+  <meta name="description" content="Descubra sua idade exata em anos, meses e dias, quanto falta para o próximo aniversário, seu signo e curiosidades sobre o tempo vivido.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topo">
+      <h1 class="marca">Age<span>Calc</span></h1>
+      <p>Sua idade exata e quanto falta para o próximo aniversário.</p>
+    </header>
+
+    <form class="entrada" id="form">
+      <label>Data de nascimento<input type="date" id="nasc" required></label>
+      <label>Calcular até<input type="date" id="ate"><small>vazio = hoje</small></label>
+      <label class="hora">Hora (opcional)<input type="time" id="hora"></label>
+    </form>
+
+    <section class="resultado" id="resultado" hidden aria-live="polite">
+      <div class="idade">
+        <div class="bloco"><b id="r-anos">0</b><span>anos</span></div>
+        <div class="bloco"><b id="r-meses">0</b><span>meses</span></div>
+        <div class="bloco"><b id="r-dias">0</b><span>dias</span></div>
+      </div>
+      <p class="frase" id="frase"></p>
+
+      <div class="cards">
+        <article class="card niver">
+          <h2>🎂 Próximo aniversário</h2>
+          <p class="grande" id="niver-falta"></p>
+          <p id="niver-data"></p>
+          <div class="barra"><i id="niver-barra"></i></div>
+          <small id="niver-pct"></small>
+        </article>
+        <article class="card">
+          <h2>⏳ Tempo vivido</h2>
+          <ul class="totais" id="totais"></ul>
+        </article>
+        <article class="card">
+          <h2>✨ Sobre você</h2>
+          <ul class="sobre" id="sobre"></ul>
+        </article>
+        <article class="card">
+          <h2>🪐 Idade em outros planetas</h2>
+          <ul class="planetas" id="planetas"></ul>
+        </article>
+        <article class="card largo">
+          <h2>🏁 Marcos</h2>
+          <ul class="marcos" id="marcos"></ul>
+        </article>
+      </div>
+      <button class="btn" id="copiar">📋 Copiar resumo</button>
+    </section>
+    <p class="vazio" id="vazio">Escolha sua data de nascimento para começar.</p>
+  </main>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
